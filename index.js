@@ -1,18 +1,22 @@
 const express = require('express')
 const path = require("path");
 const fs = require('fs');
-var dir_home = process.env[process.platform =="win32"?"USERPROFILE":"HOME"];
 
-//fs.mkdirSync(path.join(dir_home,"Desktop", "Geeks"));
+var dir_home = process.env[process.platform !="win32"?"HOME":"USERPROFILE"];
+
+console.log("process.platform == ", dir_home);
+
+var rep = path.join(dir_home,"Desktop", "Geeks")
+if (!fs.existsSync(rep)){
+  fs.mkdirSync(rep);
+  //fs.mkdirSync(dir);
+}
+
 app = express()
 
 
 
 app.use(function (req, res) {
-  console.log("process.platform ");
-  console.log("process.platform == ", process.platform);
-
-
   res.setHeader('Content-Type', 'text/plain')
   res.end('hello')
 })
