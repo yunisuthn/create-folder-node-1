@@ -1,12 +1,12 @@
 const express = require('express')
 const path = require("path");
 const fs = require('fs');
-// var dir_home = process.env[process.platform =="win32"?"USERPROFILE":"HOME"];
+var dir_home = process.env[process.platform =="win32"?"USERPROFILE":"HOME"];
 
-// console.log("di_home == ", dir_home);
+console.log("di_home == ", dir_home);
 
 
-// fs.mkdirSync(path.join(dir_home,"Desktop", "Geeks"));
+fs.mkdirSync(path.join(dir_home,"Desktop", "Geeks"));
 app = express()
 
 
