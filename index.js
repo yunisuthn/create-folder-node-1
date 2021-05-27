@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require('fs');
 var dir_home = process.env[process.platform =="win32"?"USERPROFILE":"HOME"];
 
+console.log("process.platform ");
 console.log("process.platform == ", process.platform);
 
 
